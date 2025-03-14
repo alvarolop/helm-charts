@@ -121,15 +121,4 @@ spec:
           name: {{ .Values.configAsCode.configMap }}
           defaultMode: 420
       {{- end }}
-  triggers:
-  - imageChangeParams:
-      automatic: true
-      containerNames:
-      - {{ .Values.appName }}
-      from:
-        kind: ImageStreamTag
-        name: {{ .Values.deployment.imagestream.name}}:{{ .Values.deployment.imagestream.tag}}
-      lastTriggeredImage: ""
-    type: ImageChange
-  - type: ConfigChange
 {{ end }}
