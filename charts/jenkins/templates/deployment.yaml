@@ -62,7 +62,7 @@ spec:
           value: {{ .value | default "" | quote }}
         {{- end }}
         {{- end }}
-        image: ' '
+        image: "{{ .Values.deployment.imagestream.name}}:{{ .Values.deployment.imagestream.tag}}"
         {{- if .Values.persistence }}
         imagePullPolicy: Always
         {{- else }}
