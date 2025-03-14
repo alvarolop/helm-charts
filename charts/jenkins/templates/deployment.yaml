@@ -22,6 +22,8 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: {{ .Values.appName }}
+      annotations:
+        alpha.image.policy.openshift.io/resolve-names: '*'
     spec:
       containers:
       - name: {{ .Values.appName }}
